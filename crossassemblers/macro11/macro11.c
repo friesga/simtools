@@ -53,8 +53,10 @@ DAMAGE.
 #include "object.h"
 #include "symbols.h"
 
+// Use stricmp() for the MSVC compiler
+#ifndef _MSC_VER
 #define stricmp strcasecmp
-
+#endif
 
 /* enable_tf is called by command argument parsing to enable and
    disable named options. */

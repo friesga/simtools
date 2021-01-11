@@ -53,3 +53,8 @@ extracters/rawtap/rawtap
 extracters/rstsflx/flx
 extracters/sdsdump/sdsdump
 extracters/tpdump/tpdump
+
+# Additions for build on VS2019
+.vs/
+bin/
+out/

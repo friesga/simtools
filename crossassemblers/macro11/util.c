@@ -55,6 +55,11 @@ DAMAGE.
 #include <unistd.h>
 #endif
 
+// The function strtok_s() provides the same functionality as strtok_r() on MSVC platforms
+#ifdef _MSC_VER
+#define strtok_r strtok_s
+#endif
+
 static void my_searchenv1(
     char *name,
     char *envname,

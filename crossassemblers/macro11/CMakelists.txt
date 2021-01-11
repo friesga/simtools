@@ -1,0 +1,29 @@
+#
+# Set minumum CMake version to be used
+#
+# Note: As a side effect this statement updates the policies in effect!
+#
+cmake_minimum_required (VERSION 3.15)
+
+# Enable use of MSVC_RUNTIME_LIBRARY
+cmake_policy(SET CMP0091 NEW)
+
+# Define project
+project (macro11)
+
+# Define source files
+set (MACRO11_SRCS
+	macro11.c assemble.c assemble_globals.c assemble_aux.c
+	extree.c listing.c macros.c parse.c rept_irpc.c symbols.c 
+	mlb-rsx.c object.c stream2.c util.c rad50.c)
+
+set (DUMPOBJ_SRCS dumpobj.c rad50.c)
+
+# Set output directory 
+set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
+
+# Build macro11 executable
+add_executable (macro11 ${MACRO11_SRCS})
+
+# Build dumpobj executable
+add_executable (dumpobj ${DUMPOBJ_SRCS})
